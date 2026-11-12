@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+  --color-espresso: #3e2b1e;
+  --color-cream: #fff8eb;
+  --color-muted: #a28e7b;
+  --color-gold: #baa06c;
+  --color-gold-dark: #9a7d45;
+  --color-gold-light: #e2ca96;
+  --color-line: #e5d9c9;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8f4ed;
+    background-image:
+      radial-gradient(ellipse at 95% 0%, #e4cbb65c 0%, transparent 45%),
+      radial-gradient(ellipse at 20% 20%, #f4e6d980 0%, transparent 55%),
+      linear-gradient(145deg, #fcf9f2, #f7f1e7 55%, #f2e5dc);
+    background-attachment: fixed;
+  }
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button,
+  a {
+    touch-action: manipulation;
+  }
+  button:not(:disabled),
+  select {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid #b69b68;
+    outline-offset: 4px;
+  }
+  input[type='checkbox'] {
+    min-width: 16px;
+    min-height: 16px;
+  }
+  dialog[open] {
+    animation: dialog-in 0.22s ease-out;
+  }
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.figma-custom-code-fragment {
+  display: contents;
+}
+
+.figma-bypass-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2147483647;
+  transform: translateY(-150%);
+  border-radius: 6px;
+  background: #111827;
+  color: #fff;
+  padding: 8px 12px;
+  font:
+    600 14px/1.2 system-ui,
+    sans-serif;
+  text-decoration: none;
+}
+
+.figma-bypass-link:focus {
+  transform: translateY(0);
+}
